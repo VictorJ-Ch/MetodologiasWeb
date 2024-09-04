@@ -4,8 +4,12 @@ html{
     font-optical-sizing: auto;
     font-weight: normal;
     font-style: normal;
-    background-color: antiquewhite;
+    background-color: #D7FAE0;
     margin: 10px;
+}
+body{
+    border-radius: 20px;
+    background-color: #FAEBD7 !important;
 }
 .box{
     border-radius: 15px;
@@ -14,7 +18,8 @@ html{
     padding-left: 10px;
     padding-right: 10px;
     padding-bottom: 5px;
-    margin-top: 20px;
+    margin: 20px;
+    background-color: #E6D7FA;
 }
 h1{
     font-style: bold;
@@ -27,7 +32,7 @@ h3{
     font-style: bold;
 }
 blockquote{
-    background-color: orange;
+    background-color: #53367A;
     color: white;
     border-radius: 10px;
     text-align: center;
@@ -40,4 +45,15 @@ img{
     margin-left: auto;
     margin-right: auto;
     box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
+}
+.card{
+    padding-bottom: 20px;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
+}
+footer{
+    margin-left: 40px;
+    margin-right: 40px;
+    .invisible{
+        color: #FAEBD7 ;
+    }
 }

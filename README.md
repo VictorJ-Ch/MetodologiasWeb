@@ -5,5 +5,5 @@ Hello there, i´m Víctor Javier, also know as Kaseem, i´m a game developper, a
 
 >Some other things about me: I'm an actor, singer, dancer, coregrapher, doubler and an athlet.
 
-### But first, let me take u a picture.
-![Kaseem´s Photo](./docs/Kaseem´s%20Photo.jpg)
+### But first, let me take u a selfie.
+![Kaseem´s Photo](./docs/img/Kaseem´s%20Photo.jpg)

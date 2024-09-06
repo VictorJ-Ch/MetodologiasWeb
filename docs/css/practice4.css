@@ -49,9 +49,12 @@ iframe{
 .img-fluid{
     border-radius:20px;
     box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
-    width: 100%;
+    width: 50%;
     height: auto;
-    max-width: 150%;
+    max-width: 100%;
+}
+.size17px{
+    font-size: 17px;
 }
 footer{
     margin-left: 40px;

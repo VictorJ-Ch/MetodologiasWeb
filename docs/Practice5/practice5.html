@@ -51,7 +51,52 @@
         </nav>
     </header>
     <body>
-        <p> Hello there, please check the console :)</p>
+        <h1>Simulador de Tienda en Línea</h1>
+        <section id="productos">
+            <h2>Productos</h2>
+            <article
+            class="producto"
+            data-id="1"
+            data-nombre="Camiseta"
+            data-precio="15"
+            >
+            Camiseta - $15
+            </article>
+            <article
+            class="producto"
+            data-id="2"
+            data-nombre="Pantalones"
+            data-precio="25"
+            >
+            Pantalones - $25
+            </article>
+            <article
+            class="producto"
+            data-id="3"
+            data-nombre="Zapatos"
+            data-precio="50"
+            >
+            Zapatos - $50
+            </article>
+            <article
+            class="producto"
+            data-id="4"
+            data-nombre="Sombrero"
+            data-precio="10"
+            > 
+            Sombrero - $10
+            </article>
+        </section>
+        <section id="mensaje-compra" class="hidden">
+            <h2>¡Compra realizada con éxito!</h2>
+            <p>Gracias por su compra.</p>
+        </section>
+        <section id="carrito" class="carrito">
+            <h2>Carrito de Compras</h2>
+            <ul id="lista-carrito"></ul>
+            <p>Total: $<span id="total-carrito">0</span></p>
+            <button id="btn-compra">Comprar</button>
+        </section>
     </body>
     <footer>
         <div>
@@ -59,7 +104,7 @@
                 <h3>About the page</h3>
             </div>
             <div>
-                <p>This page corresponds to Practice 5.</p>
+                <p>This page corresponds to Practice 5 and 6.</p>
                 <p class="invisible">Made by Kaseem</p>
             </div>
         </div>
@@ -67,4 +112,5 @@
     <!--Bootstrap-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script type="module" src="./practica5.js"></script>
+    <script src="./practica6.js"></script>
 </html>

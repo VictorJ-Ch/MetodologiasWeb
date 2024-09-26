@@ -81,29 +81,25 @@ const $loader = document.querySelector("#loader");
 const $mensajeExito = document.querySelector("#mensaje-exito");
 
 $btnCompra.addEventListener("click", function () {
-    if ($btnCompra.disabled) return; // Evita continuar si el carrito está vacío
+    if ($btnCompra.disabled) return;
 
-    // Muestra el loader
+    // LOADER
     $loader.classList.remove("hidden");
 
-    // Simula el tiempo de procesamiento (5 segundos)
     setTimeout(function () {
-        $loader.classList.add("hidden"); // Oculta el loader
+        $loader.classList.add("hidden");
 
-        // Muestra el mensaje de éxito con animación
         $mensajeExito.classList.remove("hidden");
         $mensajeExito.classList.add("show");
 
-        // Después de 5 segundos, oculta el mensaje con animación
         setTimeout(function () {
             $mensajeExito.classList.remove("show");
             $mensajeExito.classList.add("hide");
 
-            // Deshabilita el mensaje completamente después de la animación
             setTimeout(function () {
                 $mensajeExito.classList.add("hidden");
                 $mensajeExito.classList.remove("hide");
-            }, 500); // Duración de la animación de salida (0.5s)
-        }, 5000); // Tiempo que el mensaje estará visible (5s)
-    }, 5000); // Tiempo de espera del loader (5s)
+            }, 500);
+        }, 5000);
+    }, 5000);
 });

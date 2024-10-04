@@ -10,6 +10,9 @@ const $confirmPasswordInput = d.querySelector("#confirm-password");
 const $confirmPasswordError = d.querySelector("#confirm-password-error");
 const $successMessage = d.querySelector("#success-message");
 const $errorsMessages = d.querySelectorAll(".error");
+const $loader = d.querySelector("#loader");
+const $mensajeExito = d.querySelector("#mensaje-exito");
+
 
 // Función de Validación del Formulario
 function validateForm(e) {
@@ -58,14 +61,39 @@ function validateForm(e) {
     }
 
     if (!isValid) {
-        //Prevenir el envío del formulario si hay errores
+        // Prevenir el envío del formulario si hay errores
         e.preventDefault();
     } else {
         e.preventDefault();
-        $successMessage.innerText = "Formulario enviado exitosamente.";
-        $form.reset();
-        // Aquí puedes manejar el envío real de datos a un servidor, por ejemplo, usando fetch.
+        
+        // Mostrar el loader
+        $loader.classList.remove("hidden");
+
+        // Simular proceso de envío con un timeout
+        setTimeout(function () {
+            // Ocultar loader
+            $loader.classList.add("hidden");
+
+            // Mostrar mensaje de éxito
+            $mensajeExito.classList.remove("hidden");
+            $mensajeExito.classList.add("show");
+
+            // Ocultar el mensaje de éxito después de 5 segundos
+            setTimeout(function () {
+                $mensajeExito.classList.remove("show");
+                $mensajeExito.classList.add("hide");
+
+                setTimeout(function () {
+                    $mensajeExito.classList.add("hidden");
+                    $mensajeExito.classList.remove("hide");
+                }, 500);
+            }, 5000);
+
+            // Resetear el formulario
+            $form.reset();
+        }, 5000);
     }
 }
 
+// Escuchar el evento submit del formulario
 $form.addEventListener("submit", validateForm);

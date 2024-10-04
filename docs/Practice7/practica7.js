@@ -65,20 +65,14 @@ function validateForm(e) {
         e.preventDefault();
     } else {
         e.preventDefault();
-        
-        // Mostrar el loader
         $loader.classList.remove("hidden");
 
-        // Simular proceso de envío con un timeout
         setTimeout(function () {
-            // Ocultar loader
             $loader.classList.add("hidden");
 
-            // Mostrar mensaje de éxito
             $mensajeExito.classList.remove("hidden");
             $mensajeExito.classList.add("show");
 
-            // Ocultar el mensaje de éxito después de 5 segundos
             setTimeout(function () {
                 $mensajeExito.classList.remove("show");
                 $mensajeExito.classList.add("hide");

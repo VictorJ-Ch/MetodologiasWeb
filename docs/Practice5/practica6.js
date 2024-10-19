@@ -1,15 +1,15 @@
-let carrito = {}; // Cambiado a let
+let carrito = {};
 
 document.addEventListener("click", function (e) {
     // Sumar producto
     if (e.target.matches(".btn-sumar")) {
         const producto = e.target.closest(".producto");
-        let id = producto.getAttribute("data-id");
-        let nombre = producto.getAttribute("data-nombre");
-        let precio = parseFloat(producto.getAttribute("data-precio"));
+        let id = producto.querySelector(".card-title").getAttribute("data-id");
+        let title = producto.querySelector(".card-title").getAttribute("data-title");
+        let price = parseFloat(producto.querySelector("[data-price]").getAttribute("data-price"));
 
         if (!carrito[id]) {
-            carrito[id] = { nombre, precio, cantidad: 0 };
+            carrito[id] = { title, price, cantidad: 0 };
         }
 
         carrito[id].cantidad++;
@@ -20,7 +20,7 @@ document.addEventListener("click", function (e) {
     // Restar producto
     if (e.target.matches(".btn-restar")) {
         const producto = e.target.closest(".producto");
-        let id = producto.getAttribute("data-id");
+        let id = producto.querySelector(".card-title").getAttribute("data-id");
 
         if (carrito[id]) {
             carrito[id].cantidad--;
@@ -45,9 +45,9 @@ function actualizarCarrito() {
     Object.keys(carrito).forEach((id) => {
         const item = carrito[id];
         const itemCarrito = document.createElement("li");
-        itemCarrito.innerText = `${item.nombre} - ${item.cantidad} unidades - $${(item.precio * item.cantidad).toFixed(2)}`;
+        itemCarrito.innerText = `${item.title} - ${item.cantidad} unidades - $${(item.price * item.cantidad).toFixed(2)}`;
         listaCarrito.appendChild(itemCarrito);
-        total += item.precio * item.cantidad;
+        total += item.price * item.cantidad;
         tieneProductos = true;
     });
 
@@ -63,7 +63,7 @@ function actualizarCarrito() {
 // Actualizar botones de restar
 function actualizarBotones() {
     document.querySelectorAll(".producto").forEach((producto) => {
-        let id = producto.getAttribute("data-id");
+        let id = producto.querySelector(".card-title").getAttribute("data-id");
         const btnRestar = producto.querySelector(".btn-restar");
 
         if (!carrito[id] || carrito[id].cantidad === 0) {
@@ -73,7 +73,6 @@ function actualizarBotones() {
         }
     });
 }
-
 
 // Proceso de compra
 const $btnCompra = document.querySelector("#btn-compra");

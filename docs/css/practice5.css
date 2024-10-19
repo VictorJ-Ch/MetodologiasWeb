@@ -15,7 +15,9 @@ body {
     padding-right: 20px;
     padding-bottom: 10px;
 }
-
+.card-img-top{
+    margin: 20px;
+}
 .box {
     border-radius: 15px;
     box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
@@ -54,11 +56,6 @@ body {
     border: 1px solid #ccc;
     padding: 10px;
     margin: 5px;
-}
-.carrito {
-    border: 2px solid #444;
-    padding: 10px;
-    margin-top: 20px;
 }
 .hidden {
     display: none;
